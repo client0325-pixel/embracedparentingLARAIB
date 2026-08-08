@@ -1,0 +1,14 @@
+name = "laraib-parent-coaching"
+compatibility_date = "2026-08-01"
+pages_build_output_dir = "."
+
+# Native Cloudflare Email Service binding — lets functions/api/contact.js
+# send email with no API key. Requires Email Routing to be set up on your
+# domain in the Cloudflare dashboard first (Email > Email Routing).
+[[send_email]]
+name = "EMAIL"
+
+# Plain (non-secret) config values available to the function as env.X
+[vars]
+CONTACT_FROM_EMAIL = "hello@yourdomain.com"
+CONTACT_DESTINATION_EMAIL = "laraibsshaikh10@gmail.com"

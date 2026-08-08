@@ -1,7 +1,6 @@
 // Cloudflare Pages Function
 // Handles POST /api/contact — validates the form, blocks obvious bots,
-// and emails Laraib using Cloudflare's native Email Service binding
-// (no API key, no third-party service).
+// and emails Laraib via the Cloudflare Email REST API.
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -49,12 +48,26 @@ export async function onRequestPost(context) {
   }
 
   try {
-    await env.EMAIL.send({
-      to: env.CONTACT_DESTINATION_EMAIL, // set in wrangler.toml / dashboard, must be a verified address
-      from: env.CONTACT_FROM_EMAIL,      // an address on your Cloudflare-managed domain
-      subject: `New website inquiry from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    });
+    const res = await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/${env.CLOUDFLARE_ACCOUNT_ID}/email/sending/send`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${env.CLOUDFLARE_API_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to: env.CONTACT_DESTINATION_EMAIL,
+          from: env.CONTACT_FROM_EMAIL,
+          subject: `New website inquiry from ${name}`,
+          text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+        }),
+      }
+    );
+    const result = await res.json();
+    if (!res.ok || !result.success) {
+      throw new Error("Email API error");
+    }
   } catch (err) {
     return new Response(JSON.stringify({ error: "Failed to send" }), {
       status: 502,

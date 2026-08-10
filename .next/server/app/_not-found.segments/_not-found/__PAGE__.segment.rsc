@@ -1,0 +1,24 @@
+1:"$Sreact.fragment"
+2:I[47216,["/_next/static/chunks/44oxwbh__ebkl.js","/_next/static/chunks/40eryizn93tp3.js"],"default"]
+3:I[22016,["/_next/static/chunks/44oxwbh__ebkl.js","/_next/static/chunks/40eryizn93tp3.js"],""]
+4:I[97367,["/_next/static/chunks/44oxwbh__ebkl.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+9:I[97367,["/_next/static/chunks/44oxwbh__ebkl.js"],"ViewportBoundary"]
+a:I[97367,["/_next/static/chunks/44oxwbh__ebkl.js"],"MetadataBoundary"]
+c:I[39756,["/_next/static/chunks/44oxwbh__ebkl.js"],"default"]
+d:I[37457,["/_next/static/chunks/44oxwbh__ebkl.js"],"default"]
+10:I[79520,["/_next/static/chunks/44oxwbh__ebkl.js"],""]
+:HL["/_next/static/chunks/0_zw6ulbsx7b1.css","style"]
+8:X
+f:X
+f:C
+0:{"buildId":"bebzhQBS2R2f6WQ9rmUVW","data":[{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"children":["$","main",null,{"className":"wrap","style":{"padding":"100px 0 120px"},"children":["$","section",null,{"style":{"textAlign":"center"},"children":[["$","div",null,{"className":"eyebrow","children":"Page not found"}],["$","h1",null,{"style":{"fontSize":"clamp(36px, 6vw, 68px)","marginTop":"18px"},"children":"Oops — we can’t find that page."}],["$","p",null,{"style":{"marginTop":"18px","maxWidth":"620px","marginInline":"auto","color":"var(--ink-soft)","lineHeight":1.8},"children":"The page you are looking for may have moved, or the link is broken. Use the button below to return to the home page and continue exploring support for your family."}],["$","$L3",null,{"href":"/","className":"btn btn-primary","style":{"marginTop":"28px"},"children":"Return home"}]]}]}]}],[["$","script","script-0",{"src":"/_next/static/chunks/40eryizn93tp3.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":"$@7","staleTime":"$8","varyParams":null},{"rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L9",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$La",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"EmbracedParenting"}],["$","meta","1",{"name":"description","content":"Compassionate parent coaching for families seeking more calm, connection, and confidence."}]]}]}]}],null]}],"isPartial":"$@b","staleTime":"$8","varyParams":null},{"rsc":["$","$1","c",{"children":[null,["$","$Lc",null,{"parallelRouterKey":"children","template":["$","$Ld",null,{}]}]]}],"isPartial":"$@e","staleTime":"$8","varyParams":"$f"},{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0_zw6ulbsx7b1.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/44oxwbh__ebkl.js","async":true}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$Lc",null,{"parallelRouterKey":"children","template":["$","$Ld",null,{}],"notFound":[["$","$L2",null,{"children":["$","main",null,{"className":"wrap","style":{"padding":"100px 0 120px"},"children":["$","section",null,{"style":{"textAlign":"center"},"children":[["$","div",null,{"className":"eyebrow","children":"Page not found"}],["$","h1",null,{"style":{"fontSize":"clamp(36px, 6vw, 68px)","marginTop":"18px"},"children":"Oops — we can’t find that page."}],["$","p",null,{"style":{"marginTop":"18px","maxWidth":"620px","marginInline":"auto","color":"var(--ink-soft)","lineHeight":1.8},"children":"The page you are looking for may have moved, or the link is broken. Use the button below to return to the home page and continue exploring support for your family."}],["$","$L3",null,{"href":"/","className":"btn btn-primary","style":{"marginTop":"28px"},"children":"Return home"}]]}]}]}],[]]}],["$","$L10",null,{"src":"https://www.instagram.com/embed.js","strategy":"afterInteractive"}]]}]}]]}],"isPartial":"$@11","staleTime":"$8","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@12","rootVaryParams":null,"needsRuntimeRequest":"$@13"}
+6:null
+8:300
+13:true
+8:C
+12:0
+b:"$undefined"
+e:"$undefined"
+11:"$undefined"
+7:"$undefined"

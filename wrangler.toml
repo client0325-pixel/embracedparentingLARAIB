@@ -1,0 +1,12 @@
+name = "laraib-parent-coaching"
+compatibility_date = "2026-08-01"
+pages_build_output_dir = "."
+
+# Pages does not support [[send_email]] bindings in wrangler.toml.
+# contact.js sends mail via the Email REST API instead.
+# Set CLOUDFLARE_API_TOKEN as an encrypted secret in the Pages dashboard
+# (Settings > Variables and Secrets). Token needs "Email Sending: Edit".
+[vars]
+CLOUDFLARE_ACCOUNT_ID = "your-account-id"
+CONTACT_FROM_EMAIL = "hello@yourdomain.com"
+CONTACT_DESTINATION_EMAIL = "laraibsshaikh10@gmail.com"

@@ -989,15 +989,20 @@ footer {
   .logo {
     font-size: 16px;
     gap: 10px;
+    min-width: 130px;
   }
 
   .logo-mark {
-    width: 44px;
-    height: 44px;
+    width: auto;
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
   }
 
   .logo-mark img {
-    width: 44px;
+    width: auto;
+    height: 52px;
+    max-width: none;
   }
 
   .menu-btn {

@@ -727,6 +727,8 @@ nav.wrap {
   object-fit: cover;
   display: block;
   max-width: 100%;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Ensure the text column is placed in column 2 */
@@ -746,6 +748,10 @@ nav.wrap {
     margin-inline: 0;
     justify-self: center;
     min-height: 250px;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: flex !important;
+    visibility: visible !important;
   }
   .about-photo img {
     width: 100%;
@@ -1243,6 +1249,10 @@ footer {
     max-width: 100%;
     width: 100%;
     min-height: 240px;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: flex !important;
+    visibility: visible !important;
   }
 
   .about-list div {
@@ -1429,6 +1439,10 @@ footer {
     max-width: 100%;
     width: 100%;
     min-height: 230px;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: flex !important;
+    visibility: visible !important;
   }
 
   .about-blockquote {
@@ -1580,6 +1594,16 @@ footer {
   .testi-card {
     padding: 16px;
   }
+
+  .about-photo {
+    max-width: 100%;
+    width: 100%;
+    min-height: 210px;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: flex !important;
+    visibility: visible !important;
+  }
 }
 
 @media (max-width: 320px) {
@@ -1657,6 +1681,10 @@ footer {
     max-width: 100%;
     width: 100%;
     min-height: 200px;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: flex !important;
+    visibility: visible !important;
   }
 
   .about-blockquote {

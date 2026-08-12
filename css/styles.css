@@ -428,9 +428,10 @@ nav.wrap {
 }
 
 .wave-band svg {
-  width: 100%;
+  max-width: 600px;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .wave-caption {

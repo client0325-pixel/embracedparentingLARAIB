@@ -693,7 +693,7 @@ nav.wrap {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 0.72fr 1.28fr;
+  grid-template-columns: 1fr;
   gap: 58px;
   align-items: start;
   max-width: var(--wrap);
@@ -736,15 +736,24 @@ nav.wrap {
   grid-column: 2;
 }
 
+/* Desktop: Enable two-column layout */
+@media (min-width: 901px) {
+  .about-grid {
+    grid-template-columns: 0.72fr 1.28fr;
+    gap: 58px;
+  }
+}
+
 @media (max-width: 900px) {
   .about-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
   }
   .about-photo {
-    grid-column: 1;
-    max-width: 100%;
-    width: 100%;
+    grid-column: 1 !important;
+    max-width: 100% !important;
+    width: 100% !important;
     margin-inline: 0;
     justify-self: center;
     min-height: 250px;

@@ -745,6 +745,12 @@ nav.wrap {
     width: 100%;
     margin-inline: 0;
     justify-self: center;
+    min-height: 250px;
+  }
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .about-grid > .reveal {
     grid-column: 1;
@@ -1233,6 +1239,12 @@ footer {
     font-size: clamp(14px, 4vw, 16px);
   }
 
+  .about-photo {
+    max-width: 100%;
+    width: 100%;
+    min-height: 240px;
+  }
+
   .about-list div {
     padding: 12px 14px;
     gap: 10px;
@@ -1411,6 +1423,12 @@ footer {
 
   .contact-card p {
     font-size: 13px;
+  }
+
+  .about-photo {
+    max-width: 100%;
+    width: 100%;
+    min-height: 230px;
   }
 
   .about-blockquote {
@@ -1633,6 +1651,12 @@ footer {
   .contact-card,
   .testi-card {
     padding: 14px;
+  }
+
+  .about-photo {
+    max-width: 100%;
+    width: 100%;
+    min-height: 200px;
   }
 
   .about-blockquote {

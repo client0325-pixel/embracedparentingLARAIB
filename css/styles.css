@@ -731,16 +731,20 @@ nav.wrap {
   transform: none !important;
 }
 
-/* Ensure the text column is placed in column 2 */
-.about-grid > .reveal:not(.about-photo) {
-  grid-column: 2;
-}
-
 /* Desktop: Enable two-column layout */
 @media (min-width: 901px) {
   .about-grid {
     grid-template-columns: 0.72fr 1.28fr;
     gap: 58px;
+  }
+  
+  /* Ensure the text column is placed in column 2 on desktop */
+  .about-grid > .reveal:not(.about-photo) {
+    grid-column: 2;
+  }
+  
+  .about-photo {
+    grid-column: 1;
   }
 }
 
@@ -750,7 +754,7 @@ nav.wrap {
     gap: 32px;
   }
   .about-photo {
-    grid-column: 1;
+    grid-column: auto;
     max-width: 100%;
     width: 100%;
     margin-inline: 0;
@@ -758,7 +762,7 @@ nav.wrap {
     min-height: 250px;
   }
   .about-grid > .reveal {
-    grid-column: 1;
+    grid-column: auto;
   }
 }
 

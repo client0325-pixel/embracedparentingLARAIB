@@ -1227,12 +1227,6 @@ footer {
     border-radius: 20px;
   }
 
-  .about-photo {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-  }
-
   .about-blockquote {
     margin-top: 20px;
     padding: 18px 20px;
@@ -1417,13 +1411,6 @@ footer {
 
   .contact-card p {
     font-size: 13px;
-  }
-
-  .about-photo {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    margin-bottom: 12px;
   }
 
   .about-blockquote {
@@ -1646,13 +1633,6 @@ footer {
   .contact-card,
   .testi-card {
     padding: 14px;
-  }
-
-  .about-photo {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
   }
 
   .about-blockquote {

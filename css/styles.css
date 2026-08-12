@@ -1038,6 +1038,11 @@ footer {
   .about-photo {
     max-width: 380px;
   }
+
+  .wave-band svg {
+    max-width: 90%;
+    width: 100%;
+  }
 }
 
 @media (max-width: 860px) {
@@ -1097,6 +1102,11 @@ footer {
 
   .mobile-menu.open {
     display: flex;
+  }
+
+  .wave-band svg {
+    max-width: 80%;
+    width: 100%;
   }
 }
 

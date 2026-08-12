@@ -716,19 +716,19 @@ nav.wrap {
   box-shadow: var(--shadow);
   overflow: hidden;
   background: var(--paper-dim);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 .about-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  max-width: 100%;
-  visibility: visible !important;
   opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 /* Ensure the text column is placed in column 2 */
@@ -746,26 +746,16 @@ nav.wrap {
 
 @media (max-width: 900px) {
   .about-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
   .about-photo {
-    grid-column: 1 !important;
-    max-width: 100% !important;
-    width: 100% !important;
+    grid-column: 1;
+    max-width: 100%;
+    width: 100%;
     margin-inline: 0;
     justify-self: center;
     min-height: 250px;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    display: flex !important;
-    visibility: visible !important;
-  }
-  .about-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
   .about-grid > .reveal {
     grid-column: 1;
@@ -1254,15 +1244,7 @@ footer {
     font-size: clamp(14px, 4vw, 16px);
   }
 
-  .about-photo {
-    max-width: 100%;
-    width: 100%;
-    min-height: 240px;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    display: flex !important;
-    visibility: visible !important;
-  }
+
 
   .about-list div {
     padding: 12px 14px;
@@ -1444,15 +1426,7 @@ footer {
     font-size: 13px;
   }
 
-  .about-photo {
-    max-width: 100%;
-    width: 100%;
-    min-height: 230px;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    display: flex !important;
-    visibility: visible !important;
-  }
+
 
   .about-blockquote {
     padding: 16px 18px;
@@ -1604,15 +1578,7 @@ footer {
     padding: 16px;
   }
 
-  .about-photo {
-    max-width: 100%;
-    width: 100%;
-    min-height: 210px;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    display: flex !important;
-    visibility: visible !important;
-  }
+
 }
 
 @media (max-width: 320px) {
@@ -1686,15 +1652,7 @@ footer {
     padding: 14px;
   }
 
-  .about-photo {
-    max-width: 100%;
-    width: 100%;
-    min-height: 200px;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    display: flex !important;
-    visibility: visible !important;
-  }
+
 
   .about-blockquote {
     padding: 14px 16px;

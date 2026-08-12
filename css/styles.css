@@ -12,29 +12,57 @@
   --shadow: 0 24px 80px -40px rgba(43, 36, 64, 0.34);
   --radius: 28px;
   --wrap: 1180px;
+.about {
+  padding-bottom: 100px;
 }
 
-* {
-  box-sizing: border-box;
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 58px;
+  align-items: center;
 }
 
-html {
-  scroll-behavior: smooth;
+.about-photo {
+  aspect-ratio: 0.82;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.96) 0%, rgba(247, 239, 227, 0.9) 40%, rgba(245, 238, 229, 1) 100%);
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-blockquote {
+  margin-top: 24px;
+  padding: 22px 24px;
+  border-left: 4px solid var(--clay);
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
   color: var(--ink);
-  font-family: 'Work Sans', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  line-height: 1.7;
 }
 
-::selection {
-  background: rgba(193, 123, 107, 0.18);
-  color: var(--ink);
+.about-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.about-list div {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border: 1px solid rgba(43, 36, 64, 0.08);
+  border-radius: 20px;
+  background: var(--paper-dim);
 }
 
 a {
@@ -447,20 +475,32 @@ nav.wrap {
 }
 
 .section-head {
-  max-width: 720px;
-  margin-bottom: 42px;
+  max-width: 640px; /* limit measure for elegant line lengths */
+  margin-bottom: 20px;
 }
 
+/* Stronger visual hierarchy for about heading */
 .section-head h2 {
-  font-size: clamp(30px, 4vw, 44px);
-  margin-top: 14px;
+  font-size: clamp(36px, 5vw, 48px);
+  margin-top: 8px;
+  line-height: 1.06; /* tighter heading for a premium feel */
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 .section-head p {
-  margin-top: 16px;
-  font-size: 16px;
+  margin-top: 18px; /* balanced spacing between heading and paragraph */
+  font-size: 17px;
   color: var(--ink-soft);
-  line-height: 1.8;
+  line-height: 1.95;
+  max-width: 56ch; /* comfortable measure for paragraph readability */
+}
+
+/* Eyebrow positioning and spacing */
+.section-head .eyebrow {
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: 0.3em;
 }
 
 .shift {
@@ -702,7 +742,36 @@ nav.wrap {
   display: grid;
   grid-template-columns: 0.72fr 1.28fr;
   gap: 58px;
-  align-items: center;
+  align-items: start;
+}
+
+
+/* Place about image on the left (original layout) and text on the right */
+.about-photo {
+  grid-column: 1;
+  justify-self: start;
+  max-width: 480px;
+  align-self: start;
+}
+
+/* Ensure the text column is placed in column 2 */
+.about-grid > .reveal:not(.about-photo) {
+  grid-column: 2;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .about-photo {
+    grid-column: 1;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+  .about-grid > .reveal {
+    grid-column: 1;
+  }
 }
 
 .about-photo {

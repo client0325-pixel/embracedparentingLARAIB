@@ -1137,13 +1137,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 105px;
+    height: 105px;
     flex-shrink: 0;
   }
 
   .logo-mark img {
-    width: 48px;
+    width: 100%;
     height: auto;
   }
 
@@ -1297,13 +1297,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 100px;
+    height: 100px;
     flex-shrink: 0;
   }
 
   .logo-mark img {
-    width: 42px;
+    width: 100%;
     height: auto;
   }
 
@@ -1570,13 +1570,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 95px;
+    height: 95px;
     flex-shrink: 0;
   }
 
   .logo-mark img {
-    width: 38px;
+    width: 100%;
     height: auto;
   }
 
@@ -1636,18 +1636,18 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 90px;
+    height: 90px;
     flex-shrink: 0;
   }
 
   .logo-mark img {
-    width: 36px;
+    width: 100%;
     height: auto;
   }
 
   .logo-mark img {
-    width: 32px;
+    width: 100%;
   }
 
   .hero {

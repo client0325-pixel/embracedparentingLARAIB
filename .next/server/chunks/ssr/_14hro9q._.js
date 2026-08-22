@@ -1,3 +1,0 @@
-module.exports=[44536,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(11857);a.n(d("[project]/node_modules/next/dist/client/script.js"))},11153,a=>{"use strict";var b=a.i(44536);a.n(b)},71618,(a,b,c)=>{b.exports=a.r(11153)},33290,a=>{"use strict";var b=a.i(7997),c=a.i(71618);a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"en",children:(0,b.jsxs)("body",{children:[a,(0,b.jsx)(c.default,{src:"https://www.instagram.com/embed.js",strategy:"afterInteractive"})]})})},"metadata",0,{title:"EmbracedParenting",description:"Compassionate parent coaching for families seeking more calm, connection, and confidence."}])},70864,function(a){a.n(a.i(33290))}];
-
-//# sourceMappingURL=_14hro9q._.js.map

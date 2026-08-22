@@ -1,600 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="embracedparenting — compassionate parent coaching for families seeking more calm, connection, and confidence.">
-<meta property="og:title" content="embracedparenting">
-<meta property="og:description" content="Support for parents who want more calm, connection, and confidence in everyday family life.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://www.embracedparenting.com/images/logonew.png?v=2">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="embracedparenting">
-<meta name="twitter:description" content="Compassionate parent coaching for families seeking more calm, connection, and confidence.">
-<title>EmbracedParenting</title>
-<link rel="icon" type="image/png" href="images/logonew.png?v=2">
-<link rel="apple-touch-icon" href="images/logonew.png?v=2">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#2B2440;
-    --ink-soft:#4A4160;
-    --paper:#FBF7F0;
-    --paper-dim:#F3ECE0;
-    --clay:#C17B6B;
-    --clay-deep:#A85F50;
-    --sage:#7C8F72;
-    --gold:#CFA24A;
-    --mist:#E7DFD1;
-    --line:rgba(43,36,64,0.14);
-    --shadow: 0 20px 60px -24px rgba(43,36,64,0.32);
-    --radius: 24px;
-    --wrap: 1160px;
-  }
-
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:linear-gradient(180deg, #fcf7ef 0%, #f7efe3 100%);
-    color:var(--ink);
-    font-family:'Work Sans', system-ui, sans-serif;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,.display{font-family:'Fraunces', Georgia, serif; font-weight:600; letter-spacing:-0.01em; line-height:1.05; margin:0;}
-  p{line-height:1.7; margin:0; color:var(--ink-soft);}
-  a{color:inherit; text-decoration:none;}
-  img{max-width:100%; display:block;}
-  button,input,textarea{font:inherit;}
-  .wrap{max-width:var(--wrap); margin:0 auto; padding:0 28px;}
-  section{position:relative;}
-  .eyebrow{font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; color:var(--clay-deep);}
-  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 24px; border-radius:999px; font-weight:600; font-size:15px; cursor:pointer; border:1.5px solid transparent; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;}
-  .btn:hover{transform:translateY(-2px);}
-  .btn-primary{background:var(--ink); color:var(--paper); box-shadow:var(--shadow);}
-  .btn-primary:hover{background:var(--clay-deep);}
-  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line);}
-  .btn-ghost:hover{border-color:var(--ink); background:rgba(255,255,255,0.55);}
-  .btn-alt{background:var(--gold); color:var(--ink); box-shadow:var(--shadow);}
-  .btn-alt:hover{background:#fff;}
-  :focus-visible{outline:3px solid rgba(193,123,107,0.45); outline-offset:3px;}
-
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
-  @media (prefers-reduced-motion: reduce){.reveal{opacity:1; transform:none; transition:none;} html{scroll-behavior:auto;}}
-
-  header{position:sticky; top:0; z-index:60; padding:12px 0; background:rgba(251,247,240,0.78); backdrop-filter: blur(16px); border-bottom:1px solid rgba(43,36,64,0.08);} 
-  nav.wrap{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 14px; border:1px solid rgba(43,36,64,0.08); border-radius:999px; background:rgba(255,255,255,0.82); box-shadow:0 18px 40px -24px rgba(43,36,64,0.34);} 
-  .logo{display:inline-flex; align-items:center; gap:10px; font-family:'Fraunces', serif; font-weight:700; font-size:20px; letter-spacing:-0.02em; padding:8px 10px; border-radius:999px; transition:background .2s ease, transform .2s ease, box-shadow .2s ease;} 
-  .logo:hover{background:rgba(193,123,107,0.1); transform:translateY(-1px); box-shadow:0 10px 22px -16px rgba(43,36,64,0.3);} 
-  .logo-mark{display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; line-height:0; width:42px; height:42px; padding:2px; border-radius:999px; background:linear-gradient(135deg, rgba(193,123,107,0.16), rgba(207,162,74,0.18)); box-shadow:inset 0 0 0 1px rgba(255,255,255,0.6);} 
-  .logo-mark img{display:block; width:100%; height:100%; object-fit:contain;} 
-  .logo span{color:var(--ink);} 
-  .navlinks{display:flex; align-items:center; gap:6px; padding:6px; border-radius:999px; background:transparent;} 
-  .navlinks a{position:relative; opacity:.84; transition:opacity .2s ease, color .2s ease, background .2s ease; font-size:14px; padding:8px 12px; border-radius:999px; color:var(--ink-soft);} 
-  .navlinks a::after{content:''; position:absolute; left:12px; right:12px; bottom:6px; height:2px; border-radius:999px; background:var(--clay-deep); transform:scaleX(0); transform-origin:left; transition:transform .24s ease;} 
-  .navlinks a:hover, .navlinks a:focus-visible{opacity:1; color:var(--clay-deep); background:rgba(193,123,107,0.08);} 
-  .navlinks a:hover::after, .navlinks a:focus-visible::after{transform:scaleX(1);} 
-  .navcta{display:flex; align-items:center; gap:12px;} 
-  .navcta .btn-primary{padding:11px 18px; border-radius:999px; box-shadow:0 12px 24px -16px rgba(43,36,64,0.35);} 
-  .menu-btn{display:none; background:rgba(255,255,255,0.9); border:1px solid var(--line); color:var(--ink); cursor:pointer; padding:9px; border-radius:999px; box-shadow:0 10px 24px -18px rgba(43,36,64,0.4);} 
-  .mobile-menu{display:none; flex-direction:column; gap:10px; margin:10px 0 0; padding:16px 24px 20px; background:rgba(255,255,255,0.96); border:1px solid rgba(43,36,64,0.08); border-radius:24px; box-shadow:0 16px 36px -24px rgba(43,36,64,0.3);} 
-  .mobile-menu a{font-weight:600; color:var(--ink); padding:10px 0; border-bottom:1px solid rgba(43,36,64,0.08);} 
-  .mobile-menu a:last-child{border-bottom:none;} 
-  .mobile-menu a:hover{color:var(--clay-deep);} 
-
-  .hero{padding:84px 0 40px; overflow:hidden;}
-  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;}
-  .hero-copy h1{font-size:clamp(38px, 5.1vw, 68px); margin-top:16px; max-width:700px;}
-  .hero-copy h1 em{font-style:normal; color:var(--clay-deep);}
-  .hero-copy .sub{margin-top:22px; font-size:18px; max-width:560px;}
-  .hero-ctas{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
-  .trustline{margin-top:28px; display:flex; gap:20px; font-size:13px; color:var(--ink-soft); flex-wrap:wrap;}
-  .trustline span{display:flex; align-items:center; gap:7px;}
-  .dot{width:6px; height:6px; border-radius:50%; background:var(--sage);}
-  .hero-side{display:grid; gap:18px;}
-  .hero-visual{display:grid; gap:18px;}
-  .portrait{width:100%; max-width:420px; aspect-ratio:0.95; border-radius:34px; background:linear-gradient(145deg, var(--clay) 0%, var(--gold) 55%, var(--sage) 100%); box-shadow:var(--shadow); overflow:hidden; margin-inline:auto;}
-  .portrait img{width:100%; height:100%; object-fit:cover;}
-  .hero-card{background:rgba(255,255,255,0.74); border:1px solid var(--line); border-radius:28px; padding:24px 24px 26px; box-shadow:var(--shadow);}
-  .hero-card .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:var(--paper-dim); color:var(--clay-deep); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;}
-  .hero-card h3{font-size:22px; margin-top:14px; line-height:1.2;}
-  .hero-card p{margin-top:10px; font-size:15px;}
-  .hero-card ul{list-style:none; padding:0; margin:14px 0 0; display:grid; gap:8px;}
-  .hero-card li{display:flex; gap:10px; align-items:flex-start; color:var(--ink-soft); font-size:14.5px;}
-  .hero-card li::before{content:'•'; color:var(--clay-deep); margin-top:2px;}
-  .hero-link{display:inline-flex; align-items:center; gap:8px; margin-top:16px; font-weight:700; color:var(--clay-deep);}
-  .wave-band{line-height:0; margin-top:22px;}
-  .wave-band svg{width:100%; height:auto; display:block;}
-  .wave-caption{text-align:center; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); opacity:.65; margin-top:8px;}
-
-  .shift{padding:92px 0; background:var(--ink); color:var(--paper);}
-  .shift .wrap{max-width:860px; text-align:center;}
-  .shift .eyebrow{color:var(--gold);}
-  .shift h2{font-size:clamp(28px,3.6vw,42px); margin-top:16px; color:var(--paper);}
-  .shift p{margin-top:22px; color:#D8D2E6; font-size:17px;}
-
-  .pillars{padding:100px 0 80px;}
-  .section-head{max-width:700px; margin-bottom:42px;}
-  .section-head h2{font-size:clamp(30px,4vw,44px); margin-top:14px;}
-  .section-head p{margin-top:16px; font-size:16px;}
-  .framework-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
-  .framework-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); transition:transform .3s ease, box-shadow .3s ease;}
-  .framework-card:hover{transform:translateY(-6px); box-shadow:0 24px 50px -24px rgba(43,36,64,0.38);}
-  .framework-card .pill{display:inline-flex; padding:8px 12px; border-radius:999px; background:var(--paper-dim); color:var(--clay-deep); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;}
-  .framework-card h3{font-size:20px; margin-top:14px;}
-  .framework-card p{margin-top:10px; font-size:14.5px;}
-
-  .services{padding:22px 0 90px;}
-  .service-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:12px;}
-  .service-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:14px;}
-  .service-card ul{list-style:none; padding:0; margin:8px 0 0; display:grid; gap:8px;}
-  .service-card li{color:var(--ink-soft); font-size:14.5px; position:relative; padding-left:18px;}
-  .service-card li::before{content:'•'; color:var(--clay); position:absolute; left:0; top:0;}
-  .service-card .btn{margin-top:auto; width:fit-content;}
-  .service-note{font-size:13px; color:var(--clay-deep); font-weight:600;}
-
-  .who{padding:70px 0 96px;}
-  .chip-row{display:flex; flex-wrap:wrap; gap:14px;}
-  .chip{padding:16px 22px; border-radius:16px; background:var(--paper-dim); border:1px solid var(--line); font-size:15px; font-weight:600; display:flex; align-items:center; gap:10px;}
-  .chip .dot{background:var(--clay);}
-
-  .booking-cta{padding:0 0 90px;}
-  .booking-card{background:linear-gradient(135deg, rgba(193,123,107,0.14), rgba(207,162,74,0.16)); border:1px solid var(--line); border-radius:32px; padding:40px; display:flex; align-items:center; justify-content:space-between; gap:20px; box-shadow:var(--shadow);}
-  .booking-card h3{font-size:clamp(24px, 3vw, 32px);}
-  .booking-card p{margin-top:10px; font-size:16px; max-width:620px;}
-
-  .about{padding:24px 0 100px;}
-  .about-grid{display:grid; grid-template-columns:0.72fr 1.28fr; gap:58px; align-items:center;}
-  .about-photo{aspect-ratio:0.85; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
-  .about-photo img{width:100%; height:100%; object-fit:cover; display:block;}
-  .about-blockquote{margin-top:22px; padding:16px 20px; border-left:3px solid var(--clay); background:rgba(255,255,255,0.55); border-radius:14px; font-family:'Fraunces', serif; font-size:18px; color:var(--ink);}
-  .about-list{display:grid; gap:12px; margin-top:20px;}
-  .about-list div{display:flex; gap:12px; align-items:flex-start; padding:14px 16px; border:1px solid var(--line); border-radius:14px; background:var(--paper-dim);}
-  .about-list .dot{margin-top:8px;}
-  .badge{display:inline-flex; align-items:center; gap:10px; margin-top:24px; background:var(--paper-dim); border:1px solid var(--line); border-radius:999px; padding:10px 18px; font-size:13.5px; font-weight:600;}
-  .badge .dot{background:var(--gold);}
-
-  .insta{padding:92px 0; background:var(--paper-dim);}
-  .insta .section-head{display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:20px; max-width:none;}
-  .insta-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:10px; align-items:start;}
-  .insta-grid iframe{border-radius:16px !important;}
-  .insta-grid blockquote.instagram-media{margin:0 !important; width:100% !important; min-width:0 !important;}
-
-  .testi{padding:100px 0;}
-  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:10px;}
-  .testi-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:30px; display:flex; flex-direction:column; gap:18px; box-shadow:var(--shadow);}
-  .testi-quote{font-family:'Fraunces',serif; font-size:19px; line-height:1.45;}
-  .testi-who{font-size:13px; color:var(--ink-soft);}
-
-  .contact{padding:20px 0 110px;}
-  .contact-card{background:var(--ink); color:var(--paper); border-radius:32px; padding:60px; display:grid; grid-template-columns:1fr 1fr; gap:50px; box-shadow:var(--shadow);}
-  .contact-card h2{color:var(--paper); font-size:clamp(26px,3.4vw,36px);}
-  .contact-card p{color:#D8D2E6; margin-top:14px;}
-  .contact-card .btn-primary{background:var(--gold); color:var(--ink); margin-top:26px;}
-  .contact-card .btn-primary:hover{background:#fff;}
-  .contact-list{display:grid; gap:12px; margin-top:24px;}
-  .contact-item{display:flex; gap:12px; align-items:flex-start; color:#D8D2E6;}
-  .contact-item a{color:var(--paper);}
-  .contact-hours{margin-top:10px; color:#D8D2E6; font-size:14px;}
-  form{display:flex; flex-direction:column; gap:14px;}
-  input, textarea{width:100%; padding:14px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.06); color:var(--paper); font-family:inherit; font-size:14.5px;}
-  input::placeholder, textarea::placeholder{color:#B9B2CC;}
-  textarea{resize:vertical; min-height:110px;}
-
-  footer{padding:50px 0 40px; border-top:1px solid var(--line);}
-  .footer-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:24px; align-items:start; font-size:13.5px; color:var(--ink-soft);}
-  .footer-links{display:flex; flex-wrap:wrap; gap:18px;}
-  .footer-links a{font-weight:600;}
-
-  .wa-float{position:fixed; bottom:24px; right:24px; z-index:65; width:56px; height:56px; border-radius:50%; background:var(--sage); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow); cursor:pointer;}
-
-  @media (max-width:1040px){.hero-grid{grid-template-columns:1fr; gap:40px;} .hero-side{max-width:620px;} .framework-grid{grid-template-columns:repeat(2,1fr);} .service-grid{grid-template-columns:1fr; max-width:720px;} .about-grid{grid-template-columns:1fr; gap:36px;} .about-photo{max-width:320px;}}
-  @media (max-width:860px){.booking-card{flex-direction:column; align-items:flex-start;} .contact-card{grid-template-columns:1fr; padding:36px 26px;} .footer-grid{grid-template-columns:1fr;} nav.wrap{padding:8px 12px;} .logo{font-size:18px; padding:6px 8px;} .logo-mark{width:38px; height:38px;} .menu-btn{display:block;} .navlinks, .navcta .btn-primary{display:none;} .mobile-menu.open{display:flex;}}
-  @media (max-width:680px){.wrap{padding:0 20px;} .hero{padding-top:64px;} .hero-ctas{flex-direction:column; align-items:flex-start;} .btn{width:100%; justify-content:center;} .section-head{margin-bottom:28px;} .framework-grid{grid-template-columns:1fr;} .insta-grid{grid-template-columns:1fr;} .testi-grid{grid-template-columns:1fr;} .booking-card{padding:28px; border-radius:24px;} .contact-card{border-radius:24px;}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Support for parents who want more calm, stronger connection, and calmer responses at home — with a grounded, compassionate approach that respects your family’s story.">
+  <meta property="og:title" content="EmbracedParenting">
+  <meta property="og:description" content="Support for parents who want more calm, stronger connection, and calmer responses at home.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EmbracedParenting">
+  <meta name="twitter:description" content="Support for parents who want more calm, stronger connection, and calmer responses at home.">
+  <title>EmbracedParenting</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-<header>
-  <nav class="wrap">
-    <a href="#top" class="logo" aria-label="embracedparenting home">
-      <span class="logo-mark" aria-hidden="true">
-        <img src="images/logonew.png?v=2" alt="embracedparenting logo">
-      </span>
-      <span>EmbracedParenting</span>
-    </a>
-    <div class="navlinks">
-      <a href="#approach">Approach</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="navcta">
-      <a href="https://calendly.com/laraibsshaikh10/30min?utm_source=chatgpt.com" target="_blank" class="btn btn-primary" style="padding:11px 20px; font-size:14px;">Book a Session</a>
-    </div>
-    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-    </button>
-  </nav>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#approach">Approach</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-    <a href="https://calendly.com/laraibsshaikh10/30min?utm_source=chatgpt.com" target="_blank">Book a Session</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div class="hero-copy reveal">
-      <div class="eyebrow">Jai Certified Parent Coach · Mississauga, ON</div>
-      <h1>Parenting is hard.<br>You don’t have to hold it <em>alone</em>.</h1>
-      <p class="sub">Support for parents who want more calm, stronger connection, and calmer responses at home — with a grounded, compassionate approach that respects your family’s story.</p>
-      <div class="hero-ctas">
-        <a href="https://calendly.com/laraibsshaikh10/30min?utm_source=chatgpt.com" target="_blank" class="btn btn-primary">Book a Session</a>
-        <a href="#services" class="btn btn-ghost">Learn More</a>
-      </div>
-      <div class="trustline">
-        <span><i class="dot"></i>English · Urdu · Hindi</span>
-        <span><i class="dot"></i>Trauma-informed &amp; foster-care trained</span>
-        <span><i class="dot"></i>Culturally &amp; faith-sensitive</span>
-      </div>
-    </div>
-    <div class="hero-side reveal">
-      <div class="hero-visual">
-        <div class="portrait">
-          <img src="images/laraib-shaikh.jpg" alt="Laraib Shaikh, Jai Certified Parent Coach">
-        </div>
-        <div class="hero-card">
-          <div class="badge">A supportive space for real parenting challenges</div>
-          <h3>Helping parents move from overwhelm to connection.</h3>
-          <p>Through nervous-system awareness, attachment-based care, and practical guidance, coaching helps families feel more grounded and connected.</p>
-          <ul>
-            <li>Support for parents navigating stress, emotion, and big feelings</li>
-            <li>Gentle tools for everyday moments that feel hard</li>
-            <li>Guidance rooted in compassion, not shame</li>
-          </ul>
-          <a href="#about" class="hero-link">Discover the approach →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="wave-band">
-    <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
-      <path d="M0,45 L20,20 L40,70 L60,10 L80,60 L100,25 L120,55 L140,15 L160,65 L180,30 L200,50
-      L220,18 L240,62 L260,28 L280,58 L300,22 L320,48 L340,14 L360,66 L380,32 L400,52
-      L420,20 L440,60 L460,26 L480,54 L500,30 L520,46 L540,22 L560,58 L580,34 L600,45
-      L620,30 L640,50 L660,32 L680,46 L700,34 L720,44 L740,36 L760,42 L780,38 L800,42
-      L820,38 L840,42 L860,38 L880,41 L900,39 L920,41 L940,39 L960,41 L980,40 L1000,41
-      L1020,40 L1200,40" fill="none" stroke="var(--clay)" stroke-width="3" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <div class="wave-caption">Overwhelmed → Regulated — the work, in one line</div>
-</section>
-
-<!-- SHIFT -->
-<section class="shift">
-  <div class="wrap reveal">
-    <div class="eyebrow">The Shift</div>
-    <h2>You are not failing. Your nervous system is asking for support.</h2>
-    <p>Laraib’s own path into this work began with postpartum overwhelm and the feeling of trying to hold everything together while quietly losing herself. That lived experience shapes the way she coaches — beginning with the body, the nervous system, and the emotional reality beneath the behavior.</p>
-  </div>
-</section>
-
-<!-- FRAMEWORK -->
-<section class="pillars" id="approach">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">The EMBRACED Framework</div>
-      <h2>A grounded, compassionate approach to parenting support</h2>
-      <p>The old website’s framework remains central to the work — translated into a more modern, accessible experience that highlights the heart of the coaching: connection, calm, and confidence.</p>
-    </div>
-    <div class="framework-grid">
-      <div class="framework-card reveal">
-        <div class="pill">Empathy</div>
-        <h3>Seeing the child clearly</h3>
-        <p>We begin by understanding the emotions beneath the behavior, so responses feel less reactive and more attuned.</p>
-      </div>
-      <div class="framework-card reveal">
-        <div class="pill">Mindful Presence</div>
-        <h3>Calm in the moment</h3>
-        <p>Parents learn how regulation supports better communication, less escalation, and more steadiness across the day.</p>
-      </div>
-      <div class="framework-card reveal">
-        <div class="pill">Bonding &amp; Belonging</div>
-        <h3>Connection before correction</h3>
-        <p>Support is designed to strengthen security, trust, and belonging — especially when parenting has felt strained or overwhelming.</p>
-      </div>
-      <div class="framework-card reveal">
-        <div class="pill">Respect</div>
-        <h3>Honoring each family story</h3>
-        <p>Every family is met with care, curiosity, and respect — including cultural, faith, and lived-experience differences.</p>
-      </div>
-      <div class="framework-card reveal">
-        <div class="pill">Attunement</div>
-        <h3>Listening beneath the surface</h3>
-        <p>We slow down and identify what a child may be communicating through their behavior, so responses become more intentional.</p>
-      </div>
-      <div class="framework-card reveal">
-        <div class="pill">Compassion</div>
-        <h3>Gentle, nonjudgmental support</h3>
-        <p>The process is grounded in compassion for both the child and the parent, especially in moments of stress and doubt.</p>
-      </div>
-      <div class="framework-card reveal">
-        <div class="pill">Empowerment</div>
-        <h3>Confidence that grows</h3>
-        <p>Parents leave with more clarity, stronger boundaries, and tools that feel practical rather than performative.</p>
-      </div>
-      <div class="framework-card reveal">
-        <div class="pill">Development</div>
-        <h3>Growth over perfection</h3>
-        <p>The work supports long-term family growth through insight, consistency, and habits that can actually be lived.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">How We Can Work Together</div>
-      <h2>Support that fits the season your family is in</h2>
-      <p>Whether you need a private space to unpack what’s happening at home, or a more guided group experience, each option is designed to be practical, warm, and deeply supportive.</p>
-    </div>
-    <div class="service-grid">
-      <div class="service-card reveal">
-        <div class="eyebrow">1:1 Coaching</div>
-        <h3>Personalized support for your family</h3>
-        <p>For parents who want guided, one-on-one support around attachment, emotional regulation, and the day-to-day realities of family life.</p>
-        <ul>
-          <li>Tailored to your goals and parenting style</li>
-          <li>Rooted in nervous-system awareness and connection</li>
-          <li>Helpful for families navigating stressful seasons or big emotions</li>
-        </ul>
-        <a href="https://calendly.com/laraibsshaikh10/30min?utm_source=chatgpt.com" target="_blank" class="btn btn-ghost">Book a Consultation</a>
-      </div>
-      <div class="service-card reveal">
-        <div class="eyebrow">Group Coaching</div>
-        <h3>A reflective, community-based experience</h3>
-        <p>Small-group support for parents who want to learn, explore patterns, and build new habits alongside others who understand the journey.</p>
-        <ul>
-          <li>12-week guided experience</li>
-          <li>Focus on regulation, self-awareness, and attachment</li>
-          <li>Space to understand triggers without shame</li>
-        </ul>
-        <div class="service-note">Currently accepting parents for the waitlist.</div>
-      </div>
-      <div class="service-card reveal">
-        <div class="eyebrow">Workshops</div>
-        <h3>Practical learning for busy families</h3>
-        <p>Monthly workshops offer warm, grounded education on emotional regulation, intergenerational patterns, attachment, and parenting with more ease.</p>
-        <ul>
-          <li>Helpful for parents seeking insight and tools</li>
-          <li>Topics include trauma, nervous system, and connection</li>
-          <li>Faith- and culture-sensitive where relevant</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost">Ask about upcoming sessions</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHO SHE HELPS -->
-<section class="who" id="who">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Who She Helps</div>
-      <h2>Coaching for every stage of family life</h2>
-    </div>
-    <div class="chip-row reveal">
-      <div class="chip"><i class="dot"></i>Young Children (0–4)</div>
-      <div class="chip"><i class="dot"></i>School-Age (5–12)</div>
-      <div class="chip"><i class="dot"></i>Teenagers (13–18+)</div>
-      <div class="chip"><i class="dot"></i>Grandparents &amp; Parents of Adult Children</div>
-      <div class="chip"><i class="dot"></i>Foster / Adoptive Families</div>
-      <div class="chip"><i class="dot"></i>Step-Parenting</div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOKING CTA -->
-<section class="booking-cta">
-  <div class="wrap">
-    <div class="booking-card reveal">
-      <div>
-        <div class="eyebrow">Take the next step</div>
-        <h3>Ready to feel more supported in your parenting journey?</h3>
-        <p>Book a 30-minute session to talk through what’s going on at home and explore whether coaching feels like the right fit for you and your family.</p>
-      </div>
-      <a href="https://calendly.com/laraibsshaikh10/30min?utm_source=chatgpt.com" target="_blank" class="btn btn-alt">Book Your 30-Minute Session</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="wrap about-grid">
-    <div class="about-photo reveal"><img src="images/laraib-shaikh.jpg" alt="Laraib Shaikh, parent coach"></div>
-    <div class="reveal">
-      <div class="eyebrow">About Laraib</div>
-      <h2>A parent coach with lived experience, professional care, and a calm, thoughtful approach</h2>
-      <p>Laraib is a Certified Parent Coach, mother of two, and former chemical engineer who brings a thoughtful blend of structure, empathy, and lived experience to her work. Her path into coaching grew out of her own experience with postpartum overwhelm, which shaped her approach to helping other parents feel supported rather than alone.</p>
-      <p>She has training in trauma-informed care and foster parenting, and she brings a culturally sensitive, faith-aware lens to her work. Her goal is to help parents build more connected homes, understand their children more deeply, and feel more confident in the way they show up.</p>
-      <div class="about-blockquote">“Parenting is not about perfection. It is about presence, connection, and learning how to meet your family with more calm and care.”</div>
-      <div class="about-list">
-        <div><i class="dot"></i><span>Certified Parent Coach through The Jai Institute for Parenting.</span></div>
-        <div><i class="dot"></i><span>Additional training in trauma-informed care and foster parenting.</span></div>
-        <div><i class="dot"></i><span>Experienced in supporting families with attachment, emotional regulation, and stress.</span></div>
-      </div>
-      <div class="badge"><i class="dot"></i>Serving parents in Mississauga, Ontario and beyond</div>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section class="insta" id="instagram">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">Follow Along</div>
-        <h2>Be a part of the journey, on Instagram</h2>
-      </div>
-      <a href="https://www.instagram.com/laraib_shaikh10/" target="_blank" class="btn btn-ghost">@laraib_shaikh10 ↗</a>
-    </div>
-    <div class="insta-grid reveal">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYv9KIsDmRM/" data-instgrm-version="14"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Da_8D1NkxFO/" data-instgrm-version="14"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaBh0-4OvTj/" data-instgrm-version="14"></blockquote>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testi" id="testimonials">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">In Their Words</div>
-      <h2>Parents describe the work as calm, compassionate, and transformative</h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="testi-quote">"Doing one-on-one coaching with Laraib was truly the best thing that happened for my family this year. It encouraged me to deeply understand what true connection and secure attachment mean with my children."</div>
-        <div class="testi-who">— Eden, mom of 2</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-quote">"Laraib has a calm presence that inspires trust and confidence, and she cares so deeply — it shows up in every conversation we’ve shared."</div>
-        <div class="testi-who">— Nusrat, mom of 4</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-quote">"Laraib is a truly gifted parent coach. Her empathy and understanding make her a joy to work with, and her wealth of knowledge is evident in every interaction."</div>
-        <div class="testi-who">— Naomi, mom of 4</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="contact-card reveal">
-      <div>
-        <div class="eyebrow" style="color:var(--gold);">Get In Touch</div>
-        <h2>Ready to parent with more peace and connection?</h2>
-        <p>Book a 30-minute session, send a message, or reach out directly by phone or email. Support is available in English, Urdu, or Hindi.</p>
-        <a href="https://calendly.com/laraibsshaikh10/30min?utm_source=chatgpt.com" target="_blank" class="btn btn-primary">Book a 30-Minute Session</a>
-        <div class="contact-list">
-          <div class="contact-item"><span>📧</span><a href="mailto:laraibsshaikh10@gmail.com">laraibsshaikh10@gmail.com</a></div>
-          <div class="contact-item"><span>📞</span><a href="tel:2894426874">289-442-6874</a></div>
-          <div class="contact-item"><span>📍</span><span>Mississauga, Ontario, Canada</span></div>
-          <div class="contact-item"><span>📷</span><a href="https://www.instagram.com/laraib_shaikh10/" target="_blank">Follow me on Instagram</a></div>
-        </div>
-        <div class="contact-hours">Business hours: Monday–Friday 9:00 AM–6:00 PM · Saturday 10:00 AM–4:00 PM · Sunday Closed</div>
-      </div>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Email address" required>
-        <textarea name="message" placeholder="What would you like support with? Tell me a bit about your family." required></textarea>
-        <!-- honeypot field: real users never fill this in, bots often do -->
-        <input type="text" name="company" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px;">
-        <button type="submit" class="btn btn-primary" style="justify-content:center; border:none; width:100%; font-family:inherit;">Send Message</button>
-        <div id="form-status" style="font-size:13px; margin-top:4px; min-height:18px;"></div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap footer-grid">
-    <div>
-      <a href="#top" class="logo" style="font-size:18px;" aria-label="embracedparenting home">
-        <span class="logo-mark" aria-hidden="true"><img src="images/logonew.png?v=2" alt="embracedparenting logo"></span>
-        <span>EmbracedParenting</span>
+  <header>
+    <nav class="wrap">
+      <a href="index.html" class="logo" aria-label="EmbracedParenting home">
+        <span class="logo-mark" aria-hidden="true"><img src="images/logo.png" alt="EmbracedParenting logo"></span>
       </a>
-      <p style="margin-top:10px; max-width:360px;">Compassionate parent coaching rooted in connection, nervous-system awareness, and culturally sensitive support.</p>
+      <div class="navlinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="navcta">
+        <a href="https://calendly.com/laraibsshaikh10/30min" class="btn btn-primary" style="padding: 11px 20px; font-size: 14px;">Book A Free Discovery Call</a>
+      </div>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://calendly.com/laraibsshaikh10/30min">Book A Free Discovery Call</a>
     </div>
-    <div class="footer-links">
-      <a href="#top">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#approach">EMBRACED</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-      <a href="https://calendly.com/laraibsshaikh10/30min?utm_source=chatgpt.com" target="_blank">Book a Session</a>
-      <a href="mailto:laraibsshaikh10@gmail.com">Email</a>
-      <a href="https://www.instagram.com/laraib_shaikh10/" target="_blank">Instagram</a>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <!-- <div class="eyebrow">Jai Certified Parent Coach · Mississauga, ON</div> -->
+          <h1>Parenting is hard.<br />You don’t have to it <em>alone</em>.</h1>
+          <p class="sub">Support for parents who want more calm, stronger connection, and calmer responses at home — with a grounded, compassionate approach that respects your family’s story.</p>
+          <div class="hero-ctas">
+            <a href="https://calendly.com/laraibsshaikh10/30min" class="btn btn-primary">Book A Free Discovery Call</a>
+            <a href="services.html" class="btn btn-ghost">Learn More</a>
+          </div>
+          <div class="trustline">
+            <span><i class="dot"></i>English · Urdu · Hindi</span>
+            <span><i class="dot"></i>Trauma-informed &amp; foster-care trained</span>
+            <span><i class="dot"></i>Culturally &amp; faith-sensitive</span>
+          </div>
+        </div>
+        <div class="hero-side reveal">
+          <div class="hero-visual">
+            <div class="portrait">
+              <img src="images/home.jpeg" alt="Laraib Shaikh, Jai Certified Parent Coach">
+            </div>
+            <div class="hero-card">
+              <div class="badge">A supportive space for real parenting challenges</div>
+              <h3>Helping parents move from overwhelm to connection.</h3>
+              <p>Through nervous-system awareness, attachment-based care, and practical guidance, coaching helps families feel more grounded and connected.</p>
+              <ul>
+                <li>Support for parents navigating stress, emotion, and big feelings</li>
+                <li>Gentle tools for everyday moments that feel hard</li>
+                <li>Guidance rooted in compassion, not shame</li>
+              </ul>
+              <a href="about.html" class="hero-link">Discover the approach →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wave-band">
+        <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
+          <path d="M0,45 L20,20 L40,70 L60,10 L80,60 L100,25 L120,55 L140,15 L160,65 L180,30 L200,50 L220,18 L240,62 L260,28 L280,58 L300,22 L320,48 L340,14 L360,66 L380,32 L400,52 L420,20 L440,60 L460,26 L480,54 L500,30 L520,46 L540,22 L560,58 L580,34 L600,45 L620,30 L640,50 L660,32 L680,46 L700,34 L720,44 L740,36 L760,42 L780,38 L800,42 L820,38 L840,42 L860,38 L880,41 L900,39 L920,41 L940,39 L960,41 L980,40 L1000,41 L1020,40 L1200,40" fill="none" stroke="var(--clay)" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="wave-caption">Overwhelmed → Regulated </div>
+    </section>
+
+    <section class="pillars" id="framework">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">The EMBRACED Framework</div>
+          <h2>A grounded, compassionate approach to parenting support</h2>
+          <p>This framework highlights the heart of the coaching: connection, calm, and confidence. It is designed to help families feel safer and more attuned in the everyday.</p>
+        </div>
+        <div class="framework-grid">
+          <div class="framework-card reveal">
+            <div class="framework-card-intro">
+              <div class="framework-card-mark">E</div>
+              <div>
+                <h3>Empathy</h3>
+                <div class="framework-card-subtitle">Seeing the child clearly</div>
+              </div>
+            </div>
+            <p>We begin by understanding the emotions beneath the behavior, so responses feel less reactive and more attuned.</p>
+          </div>
+          <div class="framework-card reveal">
+            <div class="framework-card-intro">
+              <div class="framework-card-mark">M</div>
+              <div>
+                <h3>Mindful Presence</h3>
+                <div class="framework-card-subtitle">Calm in the moment</div>
+              </div>
+            </div>
+            <p>Parents learn how regulation supports better communication, less escalation, and more steadiness across the day.</p>
+          </div>
+          <div class="framework-card reveal">
+            <div class="framework-card-intro">
+              <div class="framework-card-mark">B</div>
+              <div>
+                <h3>Bonding & Belonging</h3>
+                <div class="framework-card-subtitle">Connection before correction</div>
+              </div>
+            </div>
+            <p>Support is designed to strengthen security, trust, and belonging — especially when parenting has felt strained or overwhelming.</p>
+          </div>
+          <div class="framework-card reveal">
+            <div class="framework-card-intro">
+              <div class="framework-card-mark">R</div>
+              <div>
+                <h3>Respect</h3>
+                <div class="framework-card-subtitle">Honoring each family story</div>
+              </div>
+            </div>
+            <p>Every family is met with care, curiosity, and respect — including cultural, faith, and lived-experience differences.</p>
+          </div>
+          <div class="framework-card reveal">
+            <div class="framework-card-intro">
+              <div class="framework-card-mark">A</div>
+              <div>
+                <h3>Attunement</h3>
+                <div class="framework-card-subtitle">Listening beneath the surface</div>
+              </div>
+            </div>
+            <p>We slow down and identify what a child may be communicating through their behavior, so responses become more intentional.</p>
+          </div>
+          <div class="framework-card reveal">
+            <div class="framework-card-intro">
+              <div class="framework-card-mark">C</div>
+              <div>
+                <h3>Compassion</h3>
+                <div class="framework-card-subtitle">Gentle, nonjudgmental support</div>
+              </div>
+            </div>
+            <p>The process is grounded in compassion for both the child and the parent, especially in moments of stress and doubt.</p>
+          </div>
+          <div class="framework-card reveal">
+            <div class="framework-card-intro">
+              <div class="framework-card-mark">E</div>
+              <div>
+                <h3>Empowerment</h3>
+                <div class="framework-card-subtitle">Confidence that grows</div>
+              </div>
+            </div>
+            <p>Parents leave with more clarity, stronger boundaries, and tools that feel practical rather than performative.</p>
+          </div>
+          <div class="framework-card reveal">
+            <div class="framework-card-intro">
+              <div class="framework-card-mark">D</div>
+              <div>
+                <h3>Development</h3>
+                <div class="framework-card-subtitle">Growth over perfection</div>
+              </div>
+            </div>
+            <p>The work supports long-term family growth through insight, consistency, and habits that can actually be lived.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="insta" style="padding-top: 40px;">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Follow Along</div>
+            <h2>Be a part of the journey, on Instagram</h2>
+          </div>
+          <a href="https://www.instagram.com/laraib_shaikh10/" target="_blank" rel="noreferrer" class="btn btn-ghost">@laraib_shaikh10 ↗</a>
+        </div>
+        <div class="insta-grid reveal">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYv9KIsDmRM/" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Da_8D1NkxFO/" data-instgrm-version="14"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaBh0-4OvTj/" data-instgrm-version="14"></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="testi" style="padding-top: 40px; padding-bottom: 80px;">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">In Their Words</div>
+            <h2>What Others Parents Say About Our Services</h2>
+          </div>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card reveal">
+            <div class="testi-quote">"Doing one-on-one coaching with Laraib was truly the best thing that happened for my family this year. It encouraged me to deeply understand what true connection and secure attachment mean with my children, and how to embody compassionate parenting without compromising my values.</div>
+            <div class="testi-quote">Through this journey, I learned how to love my child unconditionally by gaining insight into child development, developing the skills to regulate and ground myself during challenging emotions, and learning how to be a safe harbour for my children.</div>
+            <div class="testi-quote">Laraib herself was incredibly non-judgmental, understanding, and compassionate—always offering an empathetic ear and practical guidance tailored to each specific situation I faced.</div>
+            <div class="testi-quote">I highly recommend one-on-one parent coaching with Laraib to anyone wanting to transform their approach to parenting and become a loving yet assertive parent who can confidently handle whatever challenges arise. It’s a powerful mindset shift that helps you make small but meaningful changes—improving your family dynamic in lasting ways, free of guilt or shame."</div>
+            <div class="testi-who">— Eden, Mom of 2</div>
+          </div>
+          <div class="testi-card reveal">
+            <div class="testi-quote">"Laraib has a calm presence that inspires trust and confidence, and she cares so deeply - it shows up in every conversation we’ve shared. She is gentle but shows up with honesty, unafraid to say what you need to hear and a role-model for self-possession. I thank Allah everyday for sending Laraib in my life."</div>
+            <div class="testi-who">— Nusrat, Mom of 4</div>
+          </div>
+          <div class="testi-card reveal">
+            <div class="testi-quote">"Laraib is a truly gifted parent coach. I deeply appreciate her calm, connected presence and the confident, yet curious, leadership she brings to each session. Her empathy and understanding make her a joy to work with, and her wealth of knowledge is evident in every interaction. I am incredibly grateful for the opportunity to receive coaching from her."</div>
+            <div class="testi-who">— Naomi, Mom of 4</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p style="margin-top: 0; max-width: 360px;">Compassionate parent coaching rooted in connection, nervous-system awareness, and culturally sensitive support.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="booking.html">Booking Page</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
     </div>
-  </div>
-  <div class="wrap" style="margin-top:22px; font-size:13px; color:var(--ink-soft);">© 2026 Laraib Shaikh · Mississauga, Ontario, Canada</div>
-</footer>
+    <div class="wrap" style="margin-top: 22px; font-size: 13px; color: var(--ink-soft);">© 2026 Laraib Shaikh · Mississauga, Ontario, Canada</div>
+  </footer>
 
-<div class="wa-float" title="Chat on WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.85 1h.01a7.94 7.94 0 0 0 5.54-13.58ZM12.06 18.4h-.01a6.58 6.58 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1 1 12.24-3.5 6.56 6.56 0 0 1-6.64 6.59Zm3.6-4.93c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.14-.42.05-.2-.1-.83-.3-1.58-.97-.58-.52-.98-1.16-1.09-1.36-.11-.2-.01-.3.09-.4.09-.1.2-.23.3-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.37c-.13 0-.35.05-.53.25-.18.2-.7.68-.7 1.65 0 .97.71 1.91.81 2.04.1.13 1.4 2.14 3.4 3 .47.2.85.33 1.14.42.48.15.91.13 1.26.08.38-.06 1.17-.48 1.34-.94.16-.46.16-.86.11-.94-.05-.08-.18-.13-.38-.23Z" fill="white"/></svg>
-</div>
-
-<script>
-  // scroll reveal
-  const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-  }, { threshold:0.15 });
-  els.forEach(el=>io.observe(el));
-
-  // mobile menu
-  const menuBtn = document.querySelector('.menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', ()=>{
-      const isOpen = mobileMenu.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(isOpen));
-    });
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', ()=>{
-        mobileMenu.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  // contact form -> Cloudflare Pages Function
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-  if (form && status) {
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      status.textContent = 'Sending...';
-      status.style.color = 'var(--ink-soft)';
-      try{
-        const res = await fetch('/api/contact', {
-          method:'POST',
-          headers:{ 'Content-Type':'application/json' },
-          body: JSON.stringify(Object.fromEntries(new FormData(form)))
-        });
-        if(res.ok){
-          status.textContent = "Message sent — I'll get back to you soon!";
-          status.style.color = '#8FD19E';
-          form.reset();
-        } else {
-          status.textContent = 'Something went wrong. Please try emailing directly.';
-          status.style.color = '#E39B9B';
-        }
-      } catch(err){
-        status.textContent = 'Something went wrong. Please try emailing directly.';
-        status.style.color = '#E39B9B';
-      }
-    });
-  }
-</script>
-
-<script async src="https://www.instagram.com/embed.js"></script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
